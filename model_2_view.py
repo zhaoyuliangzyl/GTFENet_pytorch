@@ -41,8 +41,8 @@ def load_data(args):
     # path = r'data\5HP'
     # path = args.data_dir
     # rate = args.rate
-    source_data = np.load('H:\GTFENet\cwrudata_data.npy')
-    source_label = np.load('H:\GTFENet\cwrudata_label.npy').argmax(axis=-1)
+    source_data = np.load('cwrudata_data.npy')
+    source_label = np.load('cwrudata_label.npy').argmax(axis=-1)
     source_data = StandardScaler().fit_transform(source_data.T).T
     source_data = np.expand_dims(source_data, axis=1)
     x_train, x_test, y_train, y_test = train_test_split(source_data, source_label, test_size=0.3, random_state=0, stratify=source_label)
